@@ -106,7 +106,7 @@
 /* Hero Section */
 .hero-home {
     height: 500px;
-    background: url(../Images/headers-img/Rectangle-5.jpg) center/cover no-repeat;
+    background: url(./Images/headers-img/Rectangle-5.jpg) center/cover no-repeat;
     position: relative;
     color: white;
 }
@@ -363,7 +363,7 @@
 /* New Additions Section */
 .new-additions {
     height: 450px;
-    background: url(../Images/headers-img/Rectangle-2.jpg) center/cover no-repeat;
+    background: url(./Images/headers-img/Rectangle-2.jpg) center/cover no-repeat;
     position: relative;
     color: white;
 }
