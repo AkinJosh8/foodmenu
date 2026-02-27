@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Create Your Account | Chuks Kitchen</title>
+    <link rel="shortcut icon" href="./Images/Icons/logoo.png" type="image/x-icon">
+    <link rel="stylesheet" href="./CSS/Sign-up.css">
+</head>
+<body>
+
+    <main class="auth-container">
+        <section class="auth-visual">
+            <div class="overlay"></div>
+            <div class="visual-text">
+                <h1 class="logo-white">Chuks Kitchen</h1>
+                <p>Your journey to delicious, authentic Nigerian meals starts here. Sign up or log in to order your favorites today!</p>
+            </div>
+        </section>
+        <section class="auth-form-section">
+            <div class="form-card">
+                <header class="form-header">
+                    <span class="logo-orange">Chuks Kitchen</span>
+                    <h2>Create Your Account</h2>
+                </header>
+                <form id="signUpForm">
+                    <div class="input-group">
+                        <label for="email">Email</label>
+                        <div class="input-wrapper">
+                            <span class="icon"><img src="./Images/Icons/email-icon.png" alt="" class="email-icon"></span>
+                            <input type="email" id="email" placeholder="name@gmail.com" required>
+                        </div>
+                    </div>
+                    <div class="input-group">
+                        <label for="phone">Phone number</label>
+                        <div class="input-wrapper">
+                            <span class="icon"><img src="./Images/Icons/phone-icon.png" alt="" class="phone-icon"></span>
+                            <input type="tel" id="phone" placeholder="8123340690" required>
+                        </div>
+                    </div>
+                    <div class="input-group">
+                        <label for="password">Password</label>
+                        <div class="input-wrapper">
+                            <span class="icon"></span>
+                            <input type="password" id="password" placeholder="******" required>
+                            <button type="button" class="toggle-pwd" data-target="password">👁</button>
+                        </div>
+                    </div>
+                    <div class="input-group">
+                        <label for="confirmPassword">Confirm password</label>
+                        <div class="input-wrapper">
+                            <span class="icon"></span>
+                            <input type="password" id="confirmPassword" placeholder="******" required>
+                            <button type="button" class="toggle-pwd" data-target="confirmPassword">👁</button>
+                        </div>
+                    </div>
+                    <div class="terms-group">
+                        <input type="checkbox" id="terms" required>
+                        <label for="terms">I agree to the <a href="#">Terms & Conditions</a> and <a href="#">Privacy Policy</a></label>
+                    </div>
+                    <button type="submit" class="btn-continue" onclick="document.location='sign-in.html'">Continue</button>
+                </form>
+                <div class="divider">Or continue with</div>
+
+                <div class="social-btns">
+                    <button class="btn-social"><img src="./Images/Icons/google-icon.png" alt="google-icon" class="google-icon"> Continue with Google</button>
+                    <button class="btn-social"><img src="./Images/Icons/icon-apple.svg" alt="apple-icon" class="apple-icon"> Continue with Apple</button>
+                </div>
+                <p class="login-prompt">Already have an account? <a href="SIgn-In.html">Sign In</a></p>
+            </div>
+        </section>
+    </main>
+    <footer class="main-footer">
+        <div class="footer-container">
+            <div class="footer-brand">
+                <h2 class="logo">Chuks Kitchen</h2>
+                <p class="flavor-text">Bringing the authentic flavors of Nigerian home cooking to your table, with passion and care.</p>
+            </div>
+            <div class="footer-links">
+                <h3>Quick Links</h3>
+                <ul>
+                    <li><a href="./Home.html">Home</a></li>
+                    <li><a href="./Explore.html">Explore</a></li>
+                    <li><a href="./order.html">My Order</a></li>
+                    <li><a href="#">Account</a></li>
+                    <li><a href="#">Contact</a></li>
+                </ul>
+            </div>
+            <div class="footer-contact">
+                <h3>Contact Us</h3>
+                <p>+234 801 234 5678</p>
+                <p>hello@chukskitchen.com</p>
+                <p>03 Forman street, Lagos, Nigeria</p>
+            </div>
+            <div class="footer-social">
+                <h3>Social media</h3>
+                <ul>
+                    <li><a href="#">Facebook</a></li>
+                    <li><a href="#">Twitter</a></li>
+                    <li><a href="#">Linkedin</a></li>
+                    <li><a href="#">Instagram</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-right">
+            <p>© 2024 Chuks Kitchen. All rights reserved.</p>
+        </div>
+    </footer>
+
+
+    <script src="./Js/Sign-up.js"></script>
+</body>
+</html>

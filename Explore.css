@@ -1,0 +1,654 @@
+:root {
+    --primary-orange: #FF8225;
+    --light-orange: #FFEDD5;
+    --dark-brown: #5D4037;
+    --text-dark: #1A202C;
+    --bg-light: #F7F9FC;
+    --white: #ffffff;
+    
+}
+
+* { margin: 0; 
+    padding: 0; 
+    box-sizing: border-box; 
+    font-family: 'Inter', sans-serif; 
+}
+
+/* Navigation Bar */
+.navbar {
+    height: 80px;
+    display: flex;
+    align-items: center;
+    background: var(--white);
+    box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+.nav-container {
+    width: 90%;
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.logo { 
+    font-family: 'cursive'; 
+    color: var(--primary-orange); 
+    font-size: 24px; 
+    font-weight: bold; 
+}
+.nav-links { 
+    display: flex; 
+    list-style: none; 
+    gap: 40px; 
+}
+.nav-links a { 
+    text-decoration: none; 
+    color: var(--text-dark); 
+    font-weight: 500; 
+    font-size: 15px; 
+}
+.nav-links a.active { 
+    color: var(--primary-orange); 
+}
+
+.nav-actions {
+    display: flex;
+    align-items: center;
+    gap: 25px;
+}
+
+.cart-link {
+    position: relative;
+    color: var(--text-dark);
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+    transition: color 0.3s;
+}
+
+.cart-link:hover {
+    color: var(--primary-orange);
+}
+
+/* The notification count */
+.cart-count {
+    position: absolute;
+    top: -8px;
+    right: -10px;
+    background: var(--primary-orange);
+    color: white;
+    font-size: 11px;
+    font-weight: bold;
+    width: 18px;
+    height: 18px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 2px solid white; 
+}
+.btn-login {
+    background: var(--primary-orange);
+    color: white;
+    border: none;
+    padding: 10px 35px;
+    border-radius: 8px;
+    font-weight: 600;
+    cursor: pointer;
+}
+
+/* Explore Hero Area */
+.explore-hero {
+    height: 500px;
+    background: url(../Images/headers-img/Rectangle-3.jpg) center/cover no-repeat;
+    position: relative;
+    color: white;
+}
+
+.hero-overlay {
+    position: absolute;
+    top: 0; 
+    left: 0; 
+    width: 100%; 
+    height: 100%;
+    background: rgba(0, 0, 0, 0.4);
+    display: flex;
+    align-items: flex-end; 
+    padding: 0 0 60px 10%;
+}
+.hero-text-content{
+    position: absolute;
+    top: 35%;
+    left: 5%;
+}
+.explore-title { 
+    font-size: 42px; 
+    font-weight: 800; 
+    margin-bottom: 10px; 
+}
+.explore-meta { 
+    font-size: 18px; 
+    display: flex; 
+    gap: 10px; 
+    align-items: center; 
+}
+.brand-sub { 
+    opacity: 0.9; 
+}
+.rating { 
+    font-weight: 600; 
+}
+
+
+.explore-layout {
+    display: flex;
+    gap: 40px;
+    padding-top: 40px;
+    align-items: flex-start;
+}
+
+.menu-bar {
+    width: 100%;
+    background: white;
+    border-radius: 12px;
+    margin-left: 30px;
+    margin-bottom: 30px;
+    padding: 24px 20px;
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+    position: sticky;
+    top: 100px; /* Sticks the menu while scrolling the food list */
+}
+
+.title-bar {
+    padding: 0 24px 16px 24px;
+    font-size: 16px;
+    font-weight: 700;
+    color: var(--text-dark);
+}
+
+.category-list {
+    list-style: none;
+}
+
+.category-item {
+    padding: 14px 24px;
+    cursor: pointer;
+    font-size: 15px;
+    color: var(--text-dark);
+    transition: all 0.2s ease;
+    border-left: 3px solid transparent;
+}
+
+/* Hover State */
+.category-item:hover {
+    background-color: var(--light-orange);
+    color: var(--primary-orange);
+}
+
+
+.category-item.active {
+    background-color: var(--light-orange);
+    color: var(--text-dark);
+    font-weight: 600;
+    border-left: 3px solid var(--primary-orange);
+}
+
+
+.explore-grid {
+    display: grid;
+    grid-template-columns: repeat(3,1fr);
+    gap: 24px;
+    margin: 30px;
+}
+
+.compact-card {
+    background: white;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+    border: 1px solid #edf2f7;
+    transition: transform 0.2s ease;
+}
+
+.compact-card:hover {
+    transform: translateY(-4px);
+}
+
+.card-img-container img {
+    width: 100%;
+    height: 180px;
+    object-fit: cover;
+}
+
+.card-details {
+    padding: 16px;
+}
+
+.card-details h4 {
+    font-size: 16px;
+    margin-bottom: 8px;
+    color: #2D3748;
+}
+
+.card-details p {
+    font-size: 13px;
+    color: #718096;
+    line-height: 1.4;
+    height: 3.8em; /* Ensures uniform height for text */
+    overflow: hidden;
+    margin-bottom: 16px;
+}
+
+.card-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.price-tag {
+    color: #FF8225;
+    font-weight: 700;
+    font-size: 14px;
+}
+
+.btn-add-circle {
+    width: 32px;
+    height: 32px;
+    background-color: #FF8225;
+    color: white;
+    border: none;
+    border-radius: 50%;
+    font-size: 20px;
+    line-height: 1;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: background 0.2s;
+}
+
+.btn-add-circle:hover {
+    background-color: #e66f1d;
+    transform: scale(1.1);
+}
+
+/* Styling specific to the stacked sections */
+.explore-results {
+    margin-bottom: 50px;
+    padding-top: 20px;
+    border-top: 1px solid #edf2f7; /* Subtle divider between categories */
+    scroll-margin-top: 180px; /* Adjusted to account for sticky menu height */
+}
+
+/* Ensure the category heading stands out */
+.category-heading {
+    font-size: 22px;
+    color: var(--text-dark);
+    margin-bottom: 25px;
+    position: relative;
+    padding-left: 15px;
+    font-weight: 700;
+    margin: 30px;
+    
+}
+
+/* Design flourish: A small orange accent bar next to the title */
+.category-heading::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 4px;
+    height: 20px;
+    background: #FF8225;
+    border-radius: 2px;
+}
+
+/* Hover effect for card images in this section */
+.compact-card:hover 
+.card-img-container img {
+    transform: scale(1.05);
+    transition: transform 0.4s ease;
+}
+
+/* Maintain consistent spacing between major sections */
+#swallow {
+    margin-top: 40px;
+    padding-top: 30px;
+    border-top: 1px solid #eee;
+}
+
+/* Ensure images have a consistent 'food-focused' aspect ratio */
+.card-img-container {
+    width: 100%;
+    height: 180px; 
+    overflow: hidden;
+    background-color: #f0f0f0; 
+}
+
+.card-img-container img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* This prevents stretching */
+    transition: transform 0.3s ease;
+}
+
+/* Visual feedback on the add button */
+.btn-add-circle:active {
+    transform: scale(0.9);
+}
+
+/* Main Footer */
+.main-footer {
+    background: var(--dark-brown);
+    color: white;
+    padding: 60px 80px;
+    position: relative;
+}
+
+.footer-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    gap: 40px;
+}
+.flavor-text{
+    width: 85%;
+    font-size: 1.3rem;
+    font-weight: 400;
+    line-height: 1.8;
+}
+.footer-contact{
+    margin-top: -8px;
+    line-height: 2;
+}
+.footer-links ul, 
+.footer-social ul { 
+    list-style: none; 
+}
+.footer-links a, 
+.footer-social a { 
+    color: #ccc; 
+    text-decoration: none; 
+    line-height: 2; 
+}
+.footer-right p{
+    margin-top: 50px;
+    font-size: 1rem;
+    line-height: 1.8;
+}
+.scroll-btn {
+    position: absolute;
+    bottom: 40px;
+    right: 40px;
+    background: #007bff;
+    color: white;
+    border: none;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    cursor: pointer;
+}
+
+/* Mobile Responsiveness  */
+@media (max-width: 768px) {
+    /* Navbar & Hamburger */
+    .btn-login {
+        display: none; 
+    }
+
+    .nav-links {
+        display: none; /
+    }
+    .nav-links {
+        display: none; /* Keep hidden by default */
+        flex-direction: column; /* Stack links vertically */
+        position: absolute;
+        top: 80px; /* Position right below the navbar */
+        left: 0;
+        width: 100%;
+        background-color: white;
+        padding: 20px 0;
+        box-shadow: 0 10px 15px rgba(0,0,0,0.1);
+        gap: 20px; /* Space between vertical items */
+        text-align: center;
+        z-index: 999;
+    }
+
+    /* This class is added by JavaScript when the hamburger is clicked */
+    .nav-links.active {
+        display: flex; 
+        animation: slideDown 0.3s ease-out;
+    }
+
+    .nav-links li {
+        width: 100%;
+    }
+
+    .nav-links a {
+        display: block;
+        padding: 15px 0;
+        font-size: 18px; /* Larger text for mobile tapping */
+        width: 100%;
+    }
+
+    /* Simple animation for a smooth entrance */
+    @keyframes slideDown {
+        from { opacity: 0; transform: translateY(-10px); }
+        to { opacity: 1; transform: translateY(0); }
+    }
+    .menu-toggle.is-active .bar:nth-child(2) {
+        opacity: 0;
+    }
+
+    .menu-toggle.is-active .bar:nth-child(1) {
+        transform: translateY(8px) rotate(45deg);
+    }
+
+    .menu-toggle.is-active .bar:nth-child(3) {
+        transform: translateY(-8px) rotate(-45deg);
+    }
+
+    .menu-toggle {
+        display: block;
+        cursor: pointer;
+        margin-left: 150px;
+    }
+
+    .menu-toggle .bar {
+        display: block;
+        width: 25px;
+        height: 3px;
+        margin: 5px auto;
+        background-color: var(--text-dark);
+        transition: all 0.3s ease-in-out;
+    }
+
+    .explore-hero {
+        height: 60vh; 
+        background-position: center;
+    }
+
+    .hero-overlay {
+        padding: 0;
+        align-items: center; 
+        justify-content: center;
+        text-align: center;
+    }
+
+    .hero-text-content {
+        /* Reset absolute positioning from desktop to center the text */
+        position: relative;
+        top: unset;
+        left: unset;
+        width: 90%; 
+        margin: 0 auto;
+    }
+
+    .explore-title {
+        font-size: 32px; 
+        margin-bottom: 5px;
+        line-height: 1.2;
+    }
+
+    .explore-meta {
+        font-size: 14px; 
+        flex-direction: column; /* Stacks text vertically if it gets too long */
+        gap: 5px;
+        justify-content: center;
+    }
+
+    .brand-sub {
+        display: block; /* Ensures it sits on its own line if stacked */
+        font-weight: 400;
+    }
+
+    .rating {
+        display: inline-block;
+        color: #fff;
+    }
+    .explore-layout {
+        flex-direction: column; /* Stack categories above food */
+        gap: 0;
+        padding-top: 0;
+    }
+
+    .menu-bar {
+        width: 100%;
+        margin-left: 0;
+        margin-bottom: 20px;
+        padding: 20px 0; /* Vertical padding only */
+        border-radius: 0; /* Full width look */
+        box-shadow: none; /* Cleaner mobile appearance */
+        position: relative; /* Removes sticky for top-of-page flow */
+        top: 0;
+    }
+
+    .title-bar {
+        padding: 0 20px 15px 20px;
+        font-size: 18px; /* Slightly larger for mobile headers */
+    }
+
+    .category-list {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .category-item {
+        list-style: none;
+        padding: 15px 20px;
+        font-size: 16px;
+        color: #1A202C;
+        border-bottom: 1px solid #F7FAFC; /* Light divider */
+        cursor: pointer;
+        transition: background 0.2s ease;
+    }
+
+    .category-item.active {
+        background: #FFEDD5; /* Very light orange background */
+        color: #1A202C;
+        border-left: 4px solid var(--primary-orange); 
+        font-weight: 600;
+    }
+    
+    .explore-results {
+        padding: 0 15px;
+        margin-bottom: 30px;
+    }
+
+    .category-heading {
+        font-size: 20px;
+        margin: 20px 0 15px;
+        color: #1A202C;
+    }
+
+    /* Stack cards in a single column */
+    .explore-grid {
+        display: flex;
+        flex-direction: column;
+        gap: 15px;
+    }
+
+    
+    .compact-card {
+        display: flex;
+        flex-direction: row; /* Horizontal alignment */
+        background: #FFFFFF;
+        border-radius: 12px;
+        overflow: hidden;
+        padding: 10px;
+        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+        align-items: center;
+        gap: 15px;
+    }
+
+    .card-img-container {
+        flex: 0 0 100px; /* Fixed width for the image */
+        height: 100px;
+    }
+
+    .card-img-container img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        border-radius: 8px;
+    }
+
+    .card-details {
+        flex: 1; /* Take remaining space */
+        padding: 0;
+    }
+
+    .card-details h4 {
+        font-size: 16px;
+        margin-bottom: 4px;
+        color: #1A202C;
+    }
+
+    .card-details p {
+        font-size: 12px;
+        color: #718096;
+        line-height: 1.4;
+        margin-bottom: 8px;
+        /* Limit to 2 lines of text */
+        display: -webkit-box;
+        -webkit-line-clamp: 2;
+        line-clamp: 2;
+        -webkit-box-orient: vertical;
+        overflow: hidden;
+    }
+
+    .card-row {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    .price-tag {
+        font-size: 15px;
+        font-weight: 700;
+        color: var(--primary-orange);
+    }
+
+    .btn-add-circle {
+        width: 28px;
+        height: 28px;
+        background: var(--primary-orange);
+        color: white;
+        border: none;
+        border-radius: 50%;
+        font-size: 18px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        cursor: pointer;
+    }
+    footer{
+        display: none;
+    }
+}
+

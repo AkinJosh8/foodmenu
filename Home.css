@@ -1,0 +1,618 @@
+:root {
+    --primary-orange: #FF8225;
+    --dark-brown: #5D4037;
+    --text-dark: #333;
+    --text-main: #1f2937;
+    --text-light: #4b5563;
+    --white: #ffffff;
+}
+
+* { 
+    margin: 0; 
+    padding: 0; 
+    box-sizing: border-box; 
+    font-family: 'Inter', sans-serif; 
+}
+
+/* Navbar */
+.navbar {
+    height: 80px;
+    display: flex;
+    align-items: center;
+    background: var(--white);
+    box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+.nav-container {
+    width: 90%;
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo { 
+    font-family: 'cursive'; 
+    color: var(--primary-orange); 
+    font-size: 24px; 
+    font-weight: bold; 
+}
+
+.nav-links { 
+    display: flex; 
+    list-style: none; 
+    gap: 40px; 
+}
+.nav-links a { 
+    text-decoration: none; 
+    color: var(--text-dark); 
+    font-weight: 500; 
+    font-size: 15px; 
+}
+.nav-links a.active { 
+    color: var(--primary-orange); 
+}
+/* Container for Cart + Login */
+.nav-actions {
+    display: flex;
+    align-items: center;
+    gap: 25px;
+}
+
+.cart-link {
+    position: relative;
+    color: var(--text-dark);
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+    transition: color 0.3s;
+}
+
+.cart-link:hover {
+    color: var(--primary-orange);
+}
+
+/* The notification count */
+.cart-count {
+    position: absolute;
+    top: -8px;
+    right: -10px;
+    background: var(--primary-orange);
+    color: white;
+    font-size: 11px;
+    font-weight: bold;
+    width: 18px;
+    height: 18px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 2px solid white; 
+}
+.btn-login {
+    background: var(--primary-orange);
+    color: white;
+    border: none;
+    padding: 10px 35px;
+    border-radius: 8px;
+    font-weight: 600;
+    cursor: pointer;
+}
+
+/* Hero Section */
+.hero-home {
+    height: 500px;
+    background: url(../Images/headers-img/Rectangle-5.jpg) center/cover no-repeat;
+    position: relative;
+    color: white;
+}
+
+.hero-overlay {
+    height: 100%;
+    background: rgba(0, 0, 0, 0.4); /* Darkens image for text readability */
+    display: flex;
+    align-items: center;
+    padding-left: 10%;
+}
+
+.hero-content h1 { 
+    font-size: 48px; 
+    max-width: 600px; 
+    margin-bottom: 20px; 
+}
+.hero-content p { 
+    font-size: 20px; 
+    margin-bottom: 30px; 
+}
+
+.btn-discover {
+    background: var(--primary-orange);
+    color: white;
+    border: none;
+    padding: 15px 30px;
+    border-radius: 10px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+/* Floating Search Bar */
+.search-container {
+    display: flex;
+    justify-content: center;
+    margin-top: -30px; /* Pulls it up onto the hero image */
+    position: relative;
+    z-index: 10;
+}
+
+.search-box {
+    background: white;
+    width: 70%;
+    max-width: 800px;
+    height: 60px;
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    padding: 0 25px;
+    box-shadow: 0 8px 30px rgba(0,0,0,0.15);
+}
+
+.search-box input {
+    border: none;
+    width: 100%;
+    height: 100%;
+    outline: none;
+    font-size: 16px;
+    padding-left: 15px;
+}
+
+.search-icon { font-size: 20px; color: #888; }
+.categories-section {
+    padding: 60px 0;
+    background-color: #F7F9FC; 
+}
+
+.container {
+    width: 90%;
+    max-width: 1200px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.section-title {
+    font-size: 28px;
+    color: #2D3748;
+    margin-bottom: 40px;
+    font-weight: 700;
+}
+
+/* The Grid */
+.category-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); /* 3 columns */
+    gap: 30px;
+}
+
+/* The Card */
+.category-card {
+    background: #ffffff;
+    border-radius: 16px;
+    overflow: hidden;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    cursor: pointer;
+}
+
+.category-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+}
+
+.card-image {
+    width: 100%;
+    height: 200px;
+    overflow: hidden;
+}
+
+.card-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.card-content {
+    padding: 25px;
+}
+
+.card-content h3 {
+    font-size: 18px;
+    color: #4A5568;
+    font-weight: 600;
+}
+.view-all-container {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    padding: 20px; /* More generous spacing for desktop */
+    margin-top: 50px;
+}
+
+.view-all-link {
+    color: #3182CE;
+    text-decoration: none;
+    font-size: 18px; /* Slightly larger for desktop */
+    font-weight: 600;
+    position: relative;
+    transition: color 0.3s ease;
+}
+
+/* Hover effect: Subtle underline slide-in */
+.view-all-link::after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 2px;
+    bottom: -5px;
+    left: 0;
+    background-color: #3182CE;
+    transition: width 0.3s ease;
+}
+
+.view-all-link:hover {
+    color: #2b6cb0; /* Slightly darker blue on hover */
+}
+
+.view-all-link:hover::after {
+    width: 100%;
+}
+
+/* 2nd section */
+.specials-section {
+    padding: 60px 0;
+    background-color: #F7F9FC;
+}
+
+.specials-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: 30px;
+    margin-top: 40px;
+}
+
+.food-card {
+    background: #fff;
+    border-radius: 16px;
+    overflow: hidden;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+    display: flex;
+    flex-direction: column;
+}
+
+.food-image img {
+    width: 100%;
+    height: 220px;
+    object-fit: cover;
+}
+
+.food-info {
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1; /* Pushes footer to the bottom */
+}
+
+.food-info h3 {
+    font-size: 18px;
+    color: #2D3748;
+    margin-bottom: 10px;
+}
+
+.description {
+    font-size: 14px;
+    color: #718096;
+    line-height: 1.5;
+    margin-bottom: 20px;
+}
+
+.card-footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: auto; /* Aligns footer to the bottom of the card */
+}
+
+.price {
+    font-weight: 700;
+    color: #FF8225;
+    font-size: 16px;
+}
+
+.btn-add {
+    background-color: #FF8225;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 8px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background 0.2s;
+}
+
+.btn-add:hover {
+    background-color: #e66f1d;
+}
+/* Base styling for the View All link */
+.view-all-specials {
+    color: #3182CE;
+    text-decoration: none;
+    font-size: 18px;
+    font-weight: 600;
+    transition: all 0.3s ease;
+    position: relative;
+}
+
+/* Desktop Hover Effect */
+.view-all-specials:hover {
+    color: #2b6cb0;
+    text-decoration: underline;
+}
+
+/* New Additions Section */
+.new-additions {
+    height: 450px;
+    background: url(../Images/headers-img/Rectangle-2.jpg) center/cover no-repeat;
+    position: relative;
+    color: white;
+}
+
+.overlay-dark {
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5); /* Immersive dark overlay */
+    display: flex;
+    align-items: center;
+    padding: 0 80px;
+}
+
+.new-content { max-width: 600px; }
+.new-content h1 { font-size: 36px; margin-bottom: 15px; }
+.new-content p { font-size: 18px; margin-bottom: 25px; color: #E2E8F0; }
+
+.btn-discover-alt {
+    background: #FF8225;
+    color: white;
+    border: none;
+    padding: 12px 25px;
+    border-radius: 8px;
+    font-weight: 600;
+    cursor: pointer;
+}
+/* Main Footer */
+.main-footer {
+    background: var(--dark-brown);
+    color: white;
+    padding: 60px 80px;
+    position: relative;
+}
+
+.footer-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    gap: 40px;
+}
+.flavor-text{
+    width: 85%;
+    font-size: 1.3rem;
+    font-weight: 400;
+    line-height: 1.8;
+}
+.footer-contact{
+    margin-top: -8px;
+    line-height: 2;
+}
+.footer-links ul, 
+.footer-social ul { 
+    list-style: none; 
+}
+.footer-links a, 
+.footer-social a { 
+    color: #ccc; 
+    text-decoration: none; 
+    line-height: 2; 
+}
+.footer-right p{
+    margin-top: 50px;
+    font-size: 1rem;
+    line-height: 1.8;
+}
+.scroll-btn {
+    position: absolute;
+    bottom: 40px;
+    right: 40px;
+    background: #007bff;
+    color: white;
+    border: none;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    cursor: pointer;
+}
+/* Mobile Responsiveness */
+@media (max-width: 900px) {
+    .category-grid {
+        grid-template-columns: repeat(2, 1fr); /* 2 columns for tablets */
+    }
+}
+
+@media (max-width: 600px) {
+    .category-grid {
+        grid-template-columns: 1fr; /* 1 column for phones */
+    }
+}
+@media (max-width: 768px) {
+    /* 1. Navbar & Hamburger */
+    .btn-login {
+        display: block;
+        margin-right: -22px;
+    }
+    .nav-actions {
+        gap: 15px;
+    }
+    .cart-link{
+        display: none;
+    }
+    
+    .nav-links {
+        display: none; /* Hide links initially; you can toggle this with JS later */
+    }
+    .nav-links {
+        display: none; /* Keep hidden by default */
+        flex-direction: column; /* Stack links vertically */
+        position: absolute;
+        top: 80px; /* Position right below the navbar */
+        left: 0;
+        width: 100%;
+        background-color: white;
+        padding: 20px 0;
+        box-shadow: 0 10px 15px rgba(0,0,0,0.1);
+        gap: 20px; /* Space between vertical items */
+        text-align: center;
+        z-index: 999;
+    }
+
+    /* This class is added by JavaScript when the hamburger is clicked */
+    .nav-links.active {
+        display: flex; 
+        animation: slideDown 0.3s ease-out;
+    }
+
+    .nav-links li {
+        width: 100%;
+    }
+
+    .nav-links a {
+        display: block;
+        padding: 15px 0;
+        font-size: 18px; /* Larger text for mobile tapping */
+        width: 100%;
+    }
+
+    /* Simple animation for a smooth entrance */
+    @keyframes slideDown {
+        from { opacity: 0; transform: translateY(-10px); }
+        to { opacity: 1; transform: translateY(0); }
+    }
+    .menu-toggle.is-active .bar:nth-child(2) {
+        opacity: 0;
+    }
+
+    .menu-toggle.is-active .bar:nth-child(1) {
+        transform: translateY(8px) rotate(45deg);
+    }
+
+    .menu-toggle.is-active .bar:nth-child(3) {
+        transform: translateY(-8px) rotate(-45deg);
+    }
+
+    .menu-toggle {
+        display: block;
+        cursor: pointer;
+        margin-left: 150px;
+    }
+
+    .menu-toggle .bar {
+        display: block;
+        width: 25px;
+        height: 3px;
+        margin: 5px auto;
+        background-color: var(--text-dark);
+        transition: all 0.3s ease-in-out;
+    }
+
+    /* 2. Hero Section Scaling */
+    .hero-home {
+        height: 80vh; /* Make it taller on mobile to show more of the food */
+    }
+
+    .hero-overlay {
+        padding-left: 5%;
+        padding-right: 5%;
+        justify-content: center;
+        text-align: left; 
+    }
+
+    .hero-content h1 {
+        font-size: 2.2rem; /* Scaled down from 48px */
+        line-height: 1.2;
+    }
+
+    .hero-content p {
+        font-size: 1rem;
+        margin-bottom: 20px;
+    }
+
+    .btn-discover {
+        width: 100%; /* Full width button for easier tapping */
+        max-width: 280px;
+    }
+
+    /* 3. Search Bar Adjustment */
+    .search-container {
+        margin-top: -35px;
+        padding: 0 15px;
+    }
+
+    .search-box {
+        width: 100%; /* Fill the screen width */
+        height: 55px;
+        padding: 0 15px;
+    }
+
+    .search-box input {
+        font-size: 14px; /* Slightly smaller text for mobile */
+    }
+    .view-all-container {
+        width: 100%;
+        text-align: center;
+        padding: 30px 0 50px; /* Top padding for breathing room, bottom for footer gap */
+    }
+
+    .view-all-link {
+        color: #3182CE; 
+        text-decoration: none;
+        font-size: 16px;
+        font-weight: 500;
+        transition: opacity 0.2s ease;
+    }
+    .view-all-link::after {
+        display: none;
+    }
+
+    .view-all-link:active {
+        opacity: 0.7; /* Feedback for mobile touch */
+    }
+    .view-all-container {
+        padding: 30px 0 40px; /* Tighter padding for mobile */
+    }
+    .view-all-specials {
+        font-size: 15px; /* Slightly smaller for mobile screens */
+        font-weight: 500;
+        display: inline-block;
+        padding: 10px 0;
+    }
+    /* This ensures the 'View All' link container matches that background */
+    .specials-section + .view-all-container {
+        background-color: transparent; 
+        padding-top: 10px;
+        padding-bottom: 40px;
+    }
+    
+    footer{
+        display: none;
+    }
+}
+
+
+

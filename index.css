@@ -1,0 +1,234 @@
+:root {
+    --primary-orange: #FF8225;
+    --dark-brown: #5D4037;
+    --text-main: #1f2937;
+    --text-light: #4b5563;
+    --white: #ffffff;
+}
+
+* { margin: 0; 
+    padding: 0; 
+    box-sizing: border-box; 
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; 
+}
+
+/* Hero Split Layout */
+.hero {
+    display: flex;
+    min-height: 100vh;
+}
+
+.hero-image {
+    flex: 1;
+    overflow: hidden;
+}
+
+.hero-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.hero-content {
+    flex: 1;
+    padding: 40px 80px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+/* Typography & Buttons */
+h1 { 
+    font-size: 2.5rem; 
+    color: var(--text-main); 
+    margin-bottom: 1rem; 
+}
+.top-nav{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+.logo { 
+    font-family: 'cursive', serif; 
+    color: var(--primary-orange); 
+    font-size: 1.5rem; 
+}
+.btn-outline{
+    background: transparent;
+    border: 2px solid #add8e6;
+    color: #007bff;
+    cursor: pointer;
+    padding: 5px;
+    border-radius: 8px;
+    width: 20%;
+}
+
+
+/* Features List */
+.features { 
+    list-style: none; 
+    margin: 30px 0; 
+    display: grid; 
+    grid-template-columns: 1fr 1fr; 
+    gap: 15px;
+}
+
+.btn-primary {
+    background: var(--primary-orange);
+    color: white;
+    border: none;
+    padding: 15px 30px;
+    border-radius: 8px;
+    cursor: pointer;
+    width: 100%;
+    font-weight: bold;
+}
+
+.btn-secondary {
+    background: transparent;
+    border: 2px solid #add8e6;
+    color: #007bff;
+    cursor: pointer;
+    padding: 15px 30px;
+    border-radius: 8px;
+    margin-top: 30px;
+    width: 100%;
+}
+.hero-mini-footer{
+    margin-left: 50px;
+}
+.hero-mini-footer a{
+    text-decoration: none;
+    padding: 10px;
+    color: #007bff;
+}
+
+/* Main Footer */
+.main-footer {
+    background: var(--dark-brown);
+    color: white;
+    padding: 60px 80px;
+    position: relative;
+}
+
+.footer-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    gap: 40px;
+}
+.flavor-text{
+    width: 85%;
+    font-size: 1.3rem;
+    font-weight: 400;
+    line-height: 1.8;
+}
+.footer-contact{
+    margin-top: -8px;
+    line-height: 2;
+}
+.footer-links ul, 
+.footer-social ul { 
+    list-style: none; 
+}
+.footer-links a, 
+.footer-social a { 
+    color: #ccc; 
+    text-decoration: none; 
+    line-height: 2; 
+}
+.footer-right p{
+    margin-top: 50px;
+    font-size: 1rem;
+    line-height: 1.8;
+}
+.scroll-btn {
+    position: absolute;
+    bottom: 40px;
+    right: 40px;
+    background: #007bff;
+    color: white;
+    border: none;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    cursor: pointer;
+}
+
+@media (max-width: 768px) {
+    /* Stack the image on top of the content */
+    .hero {
+        flex-direction: column;
+        min-height: auto;
+    }
+
+    .hero-image {
+        height: 250px; /* Fixed height for the mobile header image */
+    }
+
+    .hero-content {
+        padding: 30px 20px; /* Reduced padding for mobile screens */
+        text-align: center; /* Center text for onboarding feel */
+    }
+
+    /* Top Nav: Logo and Sign In button alignment */
+    .top-nav {
+        justify-content: center;
+        position: relative;
+        margin-bottom: 40px;
+    }
+
+    .logo {
+        font-size: 1.8rem;
+        margin-top: 40px;
+    }
+
+    .btn-outline {
+        position: absolute;
+        top: -10px;
+        right: 0;
+        width: auto;
+        padding: 8px 20px;
+    }
+
+    /* Typography */
+    h1 {
+        font-size: 1.8rem;
+        line-height: 1.2;
+    }
+
+    /* Feature List: Stack vertically instead of 2-columns */
+    .features {
+        grid-template-columns: 1fr; /* Single column */
+        text-align: left;
+    }
+
+    .feature-item {
+        background: #F4F7F9;
+        padding: 15px;
+        border-radius: 10px;
+        display: flex;
+        align-items: center;
+        gap: 15px;
+        font-weight: 500;
+    }
+
+    .icon-box {
+        background: #FFEDD5;
+        padding: 8px;
+        border-radius: 8px;
+        color: var(--primary-orange);
+    }
+
+    /* CTA Buttons */
+    .btn-secondary {
+        margin-top: 15px; /* Tighter spacing for mobile */
+    }
+
+    .hero-mini-footer {
+        margin-left: 0;
+        margin-top: 20px;
+    }
+    footer{
+        display: none;
+    }
+}

@@ -1,0 +1,318 @@
+:root {
+    --primary-orange: #FF8225;
+    --light-orange: #FFEDD5;
+    --text-dark: #1A202C;
+    --dark-brown: #5D4037;
+    --text-gray: #718096;
+    --bg-light: #F7FAFC;
+    --white: #ffffff;
+    --border-color: #E2E8F0;
+}
+* { margin: 0; 
+    padding: 0; 
+    box-sizing: border-box; 
+    font-family: 'Inter', sans-serif; 
+}
+
+body {
+  background-color: var(--bg-light);
+}
+
+/* Navigation Bar */
+.navbar {
+    height: 80px;
+    display: flex;
+    align-items: center;
+    background: var(--white);
+    box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+.nav-container {
+    width: 90%;
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.logo { 
+    font-family: 'cursive'; 
+    color: var(--primary-orange); 
+    font-size: 24px; 
+    font-weight: bold; 
+}
+.nav-links { 
+    display: flex; 
+    list-style: none; 
+    gap: 40px; 
+}
+.nav-links a { 
+    text-decoration: none; 
+    color: var(--text-dark); 
+    font-weight: 500; 
+    font-size: 15px; 
+}
+.nav-links a.active { 
+    color: var(--primary-orange); 
+}
+/* Container for Cart + Login */
+.nav-actions {
+    display: flex;
+    align-items: center;
+    gap: 25px;
+}
+
+.cart-link {
+    position: relative;
+    color: var(--text-dark);
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+    transition: color 0.3s;
+}
+
+.cart-link:hover {
+    color: var(--primary-orange);
+}
+
+/* The notification count */
+.cart-count {
+    position: absolute;
+    top: -8px;
+    right: -10px;
+    background: var(--primary-orange);
+    color: white;
+    font-size: 11px;
+    font-weight: bold;
+    width: 18px;
+    height: 18px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 2px solid white; 
+}
+.btn-login {
+    background: var(--primary-orange);
+    color: white;
+    border: none;
+    padding: 10px 35px;
+    border-radius: 8px;
+    font-weight: 600;
+    cursor: pointer;
+}
+
+/* Payment Section */
+.payment-section {
+  display: flex;
+  justify-content: center;
+  padding: 60px 20px;
+}
+
+.payment-card {
+  background: white;
+  padding: 30px;
+  width: 100%;
+  max-width: 450px;
+  border-radius: 10px;
+  box-shadow: 0 5px 20px rgba(0,0,0,0.05);
+}
+
+.payment-card h2 {
+  margin-bottom: 20px;
+}
+
+/* Form */
+.form-group {
+  margin-bottom: 16px;
+}
+
+label {
+  font-size: 14px;
+  display: block;
+  margin-bottom: 6px;
+}
+
+input[type="text"] {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ddd;
+  border-radius: 6px;
+}
+
+.payment-options {
+  display: flex;
+  gap: 20px;
+  font-size: 14px;
+}
+
+.row {
+  display: flex;
+  gap: 15px;
+}
+
+.row .form-group {
+  flex: 1;
+}
+
+.save-card {
+  font-size: 13px;
+  margin-bottom: 15px;
+  display: block;
+}
+
+.btn-pay {
+  width: 100%;
+  background-color: #ff6b00;
+  color: white;
+  padding: 12px;
+  border: none;
+  border-radius: 6px;
+  font-weight: bold;
+  cursor: pointer;
+  margin-top: 10px;
+}
+
+.privacy-text {
+  font-size: 11px;
+  margin-top: 12px;
+  color: #777;
+}
+
+/* Main Footer */
+.main-footer {
+    background: var(--dark-brown);
+    color: white;
+    padding: 60px 80px;
+    position: relative;
+}
+
+.footer-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    gap: 40px;
+}
+.flavor-text{
+    width: 85%;
+    font-size: 1.3rem;
+    font-weight: 400;
+    line-height: 1.8;
+}
+.footer-contact{
+    margin-top: -8px;
+    line-height: 2;
+}
+.footer-links ul, 
+.footer-social ul { 
+    list-style: none; 
+}
+.footer-links a, 
+.footer-social a { 
+    color: #ccc; 
+    text-decoration: none; 
+    line-height: 2; 
+}
+.footer-right p{
+    margin-top: 50px;
+    font-size: 1rem;
+    line-height: 1.8;
+}
+.scroll-btn {
+    position: absolute;
+    bottom: 40px;
+    right: 40px;
+    background: #007bff;
+    color: white;
+    border: none;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    cursor: pointer;
+}
+
+/* Responsiveness */
+@media (max-width: 768px) {
+  /* Navbar & Hamburger */
+    .btn-login {
+        display: none; /* Hide login button on mobile header */
+    }
+
+    .nav-links {
+        display: none; /* Hide links initially; you can toggle this with JS later */
+    }
+    .nav-links {
+        display: none; /* Keep hidden by default */
+        flex-direction: column; /* Stack links vertically */
+        position: absolute;
+        top: 80px; /* Position right below the navbar */
+        left: 0;
+        width: 100%;
+        background-color: white;
+        padding: 20px 0;
+        box-shadow: 0 10px 15px rgba(0,0,0,0.1);
+        gap: 20px; /* Space between vertical items */
+        text-align: center;
+        z-index: 999;
+    }
+    .nav-actions{
+        display: none;
+    }
+    /* This class is added by JavaScript when the hamburger is clicked */
+    .nav-links.active {
+        display: flex; 
+        animation: slideDown 0.3s ease-out;
+    }
+
+    .nav-links li {
+        width: 100%;
+    }
+
+    .nav-links a {
+        display: block;
+        padding: 15px 0;
+        font-size: 18px; /* Larger text for mobile tapping */
+        width: 100%;
+    }
+
+    /* Simple animation for a smooth entrance */
+    @keyframes slideDown {
+        from { opacity: 0; transform: translateY(-10px); }
+        to { opacity: 1; transform: translateY(0); }
+    }
+    .menu-toggle.is-active .bar:nth-child(2) {
+        opacity: 0;
+    }
+
+    .menu-toggle.is-active .bar:nth-child(1) {
+        transform: translateY(8px) rotate(45deg);
+    }
+
+    .menu-toggle.is-active .bar:nth-child(3) {
+        transform: translateY(-8px) rotate(-45deg);
+    }
+
+    .menu-toggle {
+        display: block;
+        cursor: pointer;
+        
+    }
+
+    .menu-toggle .bar {
+        display: block;
+        width: 25px;
+        height: 3px;
+        margin: 5px auto;
+        margin-left: 180px;
+        background-color: var(--text-dark);
+        transition: all 0.3s ease-in-out;
+    }
+    footer{
+        display: none;
+    }
+  .payment-card {
+    padding: 20px;
+  }
+}
