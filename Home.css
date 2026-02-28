@@ -94,13 +94,7 @@
     border: 2px solid white; 
 }
 .btn-login {
-    background: var(--primary-orange);
-    color: white;
-    border: none;
-    padding: 10px 35px;
-    border-radius: 8px;
-    font-weight: 600;
-    cursor: pointer;
+    display: none;
 }
 
 /* Hero Section */
@@ -169,7 +163,11 @@
     padding-left: 15px;
 }
 
-.search-icon { font-size: 20px; color: #888; }
+.search-icon { 
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
 .categories-section {
     padding: 60px 0;
     background-color: #F7F9FC; 
@@ -454,14 +452,13 @@
 @media (max-width: 768px) {
     /* 1. Navbar & Hamburger */
     .btn-login {
-        display: block;
-        margin-right: -22px;
+        display: none;
     }
     .nav-actions {
         gap: 15px;
     }
     .cart-link{
-        display: none;
+        display: block;
     }
     
     .nav-links {
