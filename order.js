@@ -1,6 +1,3 @@
-
-
-
 const deliveryBtn = document.getElementById('deliveryBtn');
 const pickupBtn = document.getElementById('pickupBtn');
 
@@ -37,10 +34,10 @@ document.addEventListener("DOMContentLoaded", function () {
         const total = subtotal + deliveryFee + serviceFee + tax;
 
         // 3. Update UI with formatted Nigerian Naira
-        subtotalElement.textContent = `#${subtotal.toLocaleString()}`;
-        deliveryElement.textContent = `#${deliveryFee.toLocaleString()}`;
-        serviceElement.textContent = `#${serviceFee.toLocaleString()}`;
-        totalElement.textContent = `#${total.toLocaleString()}`;
+        subtotalElement.textContent = `\u20A6${subtotal.toLocaleString()}`;
+        deliveryElement.textContent = `\u20A6${deliveryFee.toLocaleString()}`;
+        serviceElement.textContent = `\u20A6${serviceFee.toLocaleString()}`;
+        totalElement.textContent = `\u20A6${total.toLocaleString()}`;
     }
 
     // Toggle logic for Delivery 

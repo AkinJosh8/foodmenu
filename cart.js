@@ -30,26 +30,19 @@ function renderCart() {
   const container = document.getElementById("cart-container");
   const totalElement = document.getElementById("cart-total");
   
-
   container.innerHTML = "";
-
   if (cart.length === 0) {
     container.innerHTML = "<p>Your cart is empty.</p>";
     totalElement.textContent = "0";
     return;
   }
-
   let total = 0;
-
-  
 
   cart.forEach(item => {
     total += item.price * item.quantity;
 
     const cartItem = document.createElement("div");
     cartItem.classList.add("cart-item");
-
-    
     cartItem.innerHTML = `<div class="cart-details">
         <img src="${item.image}" alt="${item.name}" class="cart-details-img">
         <h4 class="item-info">${item.name}</h4>
@@ -58,7 +51,7 @@ function renderCart() {
           <span class="qty-number">${item.quantity}</span>
           <button class="qty-btn" onclick="changeQuantity('${item.id}', 1)">+</button>
         </div>
-        <p class="cart-price">#${(item.price * item.quantity).toLocaleString()}</p>
+        <p class="cart-price">&#x20A6;${(item.price * item.quantity).toLocaleString()}</p>
         <button class="btn-remove" onclick="removeItem('${item.id}')"> X </button>
       </div>`
       ;
@@ -69,11 +62,9 @@ function renderCart() {
   totalElement.textContent = total.toLocaleString();
 }
 
-
 // Change quantity
 function changeQuantity(id, amount) {
   let cart = getCart();
-
   cart = cart.map(item => {
     if (item.id === id) {
       item.quantity += amount;
@@ -87,7 +78,6 @@ function changeQuantity(id, amount) {
   updateCartCount();
 }
 
-
 function removeItem(id) {
   let cart = getCart();
   cart = cart.filter(item => item.id !== id);
@@ -96,7 +86,6 @@ function removeItem(id) {
   renderCart();
   updateCartCount();
 }
-
 
 document.addEventListener("DOMContentLoaded", function () {
   renderCart();
