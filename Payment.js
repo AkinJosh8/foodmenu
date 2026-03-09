@@ -1,8 +1,14 @@
 function calculateTotal() {
   const cart = getCart();
-  return cart.reduce((total, item) => {
+
+  const subtotal = cart.reduce((total, item) => {
     return total + item.price * item.quantity;
   }, 0);
+
+  const deliveryFee = subtotal > 0 ? 1500 : 0;   // example delivery fee
+  const serviceFee = subtotal * 0.05;            // 5% service charge
+
+  return subtotal + deliveryFee + serviceFee;
 }
 
 // Display total

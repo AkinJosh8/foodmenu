@@ -23,12 +23,15 @@ document.addEventListener("DOMContentLoaded", function () {
     const pickupBtn = document.getElementById("pickupBtn");
 
     let deliveryFee = 1500;
-    const serviceFee = 200;
+    
     const tax = 0;
 
     function calculateSummary() {
         // 1. Calculate Subtotal from cart items
         const subtotal = cart.reduce((sum, item) => sum + (item.price * item.quantity), 0);
+
+        // 2. Calculate Service Fee (15%)
+        const serviceFee = Math.round(subtotal * 0.05);
 
         // 2. Calculate Final Total
         const total = subtotal + deliveryFee + serviceFee + tax;
